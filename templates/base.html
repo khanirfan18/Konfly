@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Konfly{% endblock %}</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Poppins Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+
+    {% block css_files %}{% endblock %}
+</head>
+
+<body class="font-[Poppins] bg-zinc-950 text-white min-h-screen flex flex-col">
+
+    <nav class="border-b border-zinc-800 px-6 py-4">
+        This is Nav
+    </nav>
+
+    <main class="flex-1">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="border-t border-zinc-800 px-6 py-6 text-zinc-400">
+        This is footer
+    </footer>
+
+</body>
+</html>
