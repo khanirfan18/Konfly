@@ -4,33 +4,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>{% block title %}Konfly{% endblock %}</title>
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- Poppins Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
 
     {% block css_files %}{% endblock %}
 </head>
 
-<body class="font-[Poppins] bg-zinc-950 text-white min-h-screen flex flex-col">
+<body class="min-h-screen text-white overflow-x-hidden relative bg-[#12051F]"
+      style="font-family:'Poppins',sans-serif;">
 
-    <nav class="border-b border-zinc-800 px-6 py-4">
-        This is Nav
+    <div class="fixed inset-0 -z-10">
+        <img src="{% static 'theme/heroImage.jpeg' %}"
+             alt=""
+             class="w-full h-full object-cover object-center">
+
+        <div class="absolute inset-0 bg-[#12051F]/50"></div>
+
+        <div class="absolute inset-0 bg-gradient-to-b from-[#12051F]/10 via-[#12051F]/35 to-[#12051F]"></div>
+    </div>
+
+    <nav class="sticky top-0 z-50 backdrop-blur-lg bg-[#12051F]/25 border-b border-violet-500/20">
+
+        <div class="h-14 flex items-center justify-between px-4 md:px-8 lg:px-10">
+
+            <a href="/"
+               class="text-[#FFF15C] text-[34px] tracking-[0.25em]"
+               style="font-family:'Silkscreen',monospace;">
+                KONFLY
+            </a>
+
+            <div class="flex items-center gap-8 text-[15px] font-medium">
+
+                <a href="/" class="text-white/70 hover:text-[#FFF15C] transition">
+                    Home
+                </a>
+
+                <a href="/explore" class="text-white/70 hover:text-[#FFF15C] transition">
+                    Explore
+                </a>
+
+                <a href="#" class="text-white/70 hover:text-[#FFF15C] transition">
+                    Host
+                </a>
+
+                <a href="#"
+                   class="rounded-full border border-[#FFF15C]/40 px-3 py-1 text-[#FFF15C] hover:bg-[#FFF15C] hover:text-[#12051F] transition">
+                    Login
+                </a>
+
+            </div>
+
+        </div>
+
     </nav>
 
-    <main class="flex-1">
+    <main class="max-w-[1500px] mx-auto px-5 md:px-10 lg:px-14 pt-10 pb-20">
+
+        <section class="pt-3 pb-16">
+
+            <h1 class="text-[#FFF15C] uppercase leading-[0.92] tracking-[0.06em] text-5xl md:text-7xl lg:text-[82px]"
+                style="font-family:'Silkscreen',monospace;">
+
+                EVENTS
+                <br>
+                NEAR YOU
+
+            </h1>
+
+            <div class="mt-5 h-[4px] w-72 bg-[#FFF15C] rounded-full"></div>
+
+            <p class="mt-7 text-white/70 text-lg md:text-xl max-w-xl leading-8">
+                Find hackathons, workshops, meetups and local communities happening around your city.
+            </p>
+
+        </section>
+
         {% block content %}
         {% endblock %}
+
     </main>
 
-    <footer class="border-t border-zinc-800 px-6 py-6 text-zinc-400">
-        This is footer
+    <footer class="border-t border-violet-500/20 bg-black/20 backdrop-blur-md">
+
+        <div class="max-w-[1500px] mx-auto px-5 md:px-10 lg:px-14 py-7 flex flex-col md:flex-row justify-between items-center text-sm">
+
+            <p class="text-white/40">
+                © 2026 Konfly — Events Near You.
+            </p>
+
+            <div class="flex gap-6 mt-4 md:mt-0 text-white/50">
+
+                <a href="#" class="hover:text-[#FFF15C] transition">
+                    GitHub
+                </a>
+
+                <a href="#" class="hover:text-[#FFF15C] transition">
+                    Contact
+                </a>
+
+                <a href="#" class="hover:text-[#FFF15C] transition">
+                    About
+                </a>
+
+            </div>
+
+        </div>
+
     </footer>
 
 </body>
