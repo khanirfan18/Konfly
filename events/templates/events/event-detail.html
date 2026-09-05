@@ -8,7 +8,7 @@
 
 <div class="min-h-screen bg-[#14011F] text-white">
 
-    <!-- Hero Banner -->
+
     <section class="relative">
         {% if event.banner %}
             <img src="{{ event.banner.url }}"
@@ -18,10 +18,8 @@
             <div class="h-[280px] w-full bg-gradient-to-r from-violet-700 via-purple-700 to-fuchsia-600 md:h-[420px]"></div>
         {% endif %}
 
-        <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black/45"></div>
 
-        <!-- Event Title -->
         <div class="absolute bottom-0 left-0 w-full">
             <div class="mx-auto max-w-6xl px-6 pb-10">
 
@@ -41,15 +39,12 @@
         </div>
     </section>
 
-    <!-- Main Content -->
     <div class="mx-auto max-w-6xl px-6 py-12">
 
         <div class="grid gap-10 lg:grid-cols-3">
 
-            <!-- Left Content -->
             <div class="space-y-8 lg:col-span-2">
 
-                <!-- About -->
                 <div class="rounded-3xl bg-white/5 p-6 backdrop-blur-md border border-white/10">
                     <h2 class="mb-4 text-2xl font-bold text-yellow-300">
                         About this Event
@@ -60,7 +55,6 @@
                     </p>
                 </div>
 
-                <!-- Highlights -->
                 <div class="rounded-3xl bg-white/5 p-6 border border-white/10">
                     <h2 class="mb-5 text-2xl font-bold text-yellow-300">
                         Event Highlights
@@ -93,7 +87,6 @@
 
             </div>
 
-            <!-- Right Sticky Card -->
             <aside class="lg:sticky lg:top-24 h-fit">
 
                 <div class="rounded-3xl border border-purple-500 bg-gradient-to-br from-[#5B1198] via-[#6F1CC5] to-[#33064D] p-6 shadow-xl">
@@ -130,7 +123,6 @@
 
                     </div>
 
-                    <!-- CTA -->
                     <a href="{{ event.link }}"
                        target="_blank"
                        class="mt-8 flex w-full items-center justify-center rounded-2xl bg-yellow-300 py-4 text-lg font-bold text-purple-900 transition hover:bg-yellow-200">
