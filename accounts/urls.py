@@ -1,12 +1,11 @@
-from django.conf.urls.static import static
-from django.conf import settings
-from django.contrib import admin
 from django.urls import path,include
+from . import views
 
-
+app_name = "accounts"
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',include("events.urls")),
-    path('account',include("accounts.urls"))
+    path("signup/",views.HandleNewUser.as_view(),name="signup"),
+    path("login/",views.HandleOldUser.as_view(),name="login"),
+    # path("profile/",views.index,name="profile"),
+
 ]
 

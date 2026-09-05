@@ -19,62 +19,66 @@
 <body class="min-h-screen overflow-x-hidden bg-[#12051F] text-white relative"
       style="font-family:'Poppins',sans-serif;">
 
-    <!-- Background -->
     <div class="fixed inset-0 -z-10">
         <img src="{% static 'theme/heroImage.jpeg' %}"
              alt=""
              class="h-full w-full object-cover object-center">
 
         <div class="absolute inset-0 bg-[#12051F]/50"></div>
-
         <div class="absolute inset-0 bg-gradient-to-b from-[#12051F]/10 via-[#12051F]/35 to-[#12051F]"></div>
     </div>
 
-    <!-- Navbar -->
     <nav class="sticky top-0 z-50 border-b border-violet-500/20 bg-[#12051F]/25 backdrop-blur-lg">
+        <div class="flex h-16 w-full items-center justify-between px-4 md:px-8 lg:px-10">
 
-    <div class="flex h-16 w-full items-center justify-between px-4 md:px-8 lg:px-10">
-
-        <!-- Logo -->
-        <a href="/"
-           class="text-[34px] tracking-[0.25em] text-[#FFF15C]"
-           style="font-family:'Silkscreen', monospace;">
-            KONFLY
-        </a>
-
-        <!-- Links -->
-        <div class="flex items-center gap-8 text-sm font-medium">
-
-            <a href="/explore" class="text-white/70 transition hover:text-[#FFF15C]">
-                Explore
+            <a href="/"
+               class="text-[34px] tracking-[0.25em] text-[#FFF15C]"
+               style="font-family:'Silkscreen', monospace;">
+                KONFLY
             </a>
 
-            <a href="#" class="text-white/70 transition hover:text-[#FFF15C]">
-                Host
-            </a>
+            <div class="flex items-center gap-8 text-sm font-medium">
 
-            <a href="#"
-               class="rounded-full border border-[#FFF15C]/40 px-4 py-1.5 text-[#FFF15C] transition hover:bg-[#FFF15C] hover:text-[#12051F]">
-                Login
-            </a>
+                <a href="/explore" class="text-white/70 transition hover:text-[#FFF15C]">
+                    Explore
+                </a>
+
+                <a href="#" class="text-white/70 transition hover:text-[#FFF15C]">
+                    Host
+                </a>
+
+                {% if user.is_authenticated %}
+
+                    <a href="{% url 'accounts:profile' %}"
+                       class="font-semibold text-[#FFF15C] transition hover:text-yellow-300">
+                        {{ user.username }}
+                    </a>
+
+                    <a href="{% url 'accounts:logout' %}"
+                       class="rounded-full border border-red-400/40 px-4 py-1.5 text-red-300 transition hover:bg-red-400 hover:text-white">
+                        Logout
+                    </a>
+
+                {% else %}
+
+                    <a href="{% url 'accounts:login' %}"
+                       class="rounded-full border border-[#FFF15C]/40 px-4 py-1.5 text-[#FFF15C] transition hover:bg-[#FFF15C] hover:text-[#12051F]">
+                        Login
+                    </a>
+
+                {% endif %}
+
+            </div>
 
         </div>
+    </nav>
 
-    </div>
-
-</nav>
-
-    <!-- Main Content -->
-    <main class="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
-
+    <main class="mx-auto w-full max-w-screen-2xl px-4 py-8 sm:px-6 lg:px-8">
         {% block content %}
         {% endblock %}
-
     </main>
 
-    <!-- Footer -->
     <footer class="border-t border-violet-500/20 bg-black/20 backdrop-blur-md">
-
         <div class="mx-auto flex w-full max-w-screen-2xl flex-col items-center justify-between px-4 py-8 text-sm sm:px-6 md:flex-row lg:px-8">
 
             <p class="text-white/40">
@@ -98,7 +102,6 @@
             </div>
 
         </div>
-
     </footer>
 
 </body>
