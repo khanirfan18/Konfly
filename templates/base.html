@@ -16,99 +16,82 @@
     {% block css_files %}{% endblock %}
 </head>
 
-<body class="min-h-screen text-white overflow-x-hidden relative bg-[#12051F]"
+<body class="min-h-screen overflow-x-hidden bg-[#12051F] text-white relative"
       style="font-family:'Poppins',sans-serif;">
 
+    <!-- Background -->
     <div class="fixed inset-0 -z-10">
         <img src="{% static 'theme/heroImage.jpeg' %}"
              alt=""
-             class="w-full h-full object-cover object-center">
+             class="h-full w-full object-cover object-center">
 
         <div class="absolute inset-0 bg-[#12051F]/50"></div>
 
         <div class="absolute inset-0 bg-gradient-to-b from-[#12051F]/10 via-[#12051F]/35 to-[#12051F]"></div>
     </div>
 
-    <nav class="sticky top-0 z-50 backdrop-blur-lg bg-[#12051F]/25 border-b border-violet-500/20">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 border-b border-violet-500/20 bg-[#12051F]/25 backdrop-blur-lg">
 
-        <div class="h-14 flex items-center justify-between px-4 md:px-8 lg:px-10">
+    <div class="flex h-16 w-full items-center justify-between px-4 md:px-8 lg:px-10">
 
-            <a href="/"
-               class="text-[#FFF15C] text-[34px] tracking-[0.25em]"
-               style="font-family:'Silkscreen',monospace;">
-                KONFLY
+        <!-- Logo -->
+        <a href="/"
+           class="text-[34px] tracking-[0.25em] text-[#FFF15C]"
+           style="font-family:'Silkscreen', monospace;">
+            KONFLY
+        </a>
+
+        <!-- Links -->
+        <div class="flex items-center gap-8 text-sm font-medium">
+
+            <a href="/explore" class="text-white/70 transition hover:text-[#FFF15C]">
+                Explore
             </a>
 
-            <div class="flex items-center gap-8 text-[15px] font-medium">
+            <a href="#" class="text-white/70 transition hover:text-[#FFF15C]">
+                Host
+            </a>
 
-                <a href="/" class="text-white/70 hover:text-[#FFF15C] transition">
-                    Home
-                </a>
-
-                <a href="/explore" class="text-white/70 hover:text-[#FFF15C] transition">
-                    Explore
-                </a>
-
-                <a href="#" class="text-white/70 hover:text-[#FFF15C] transition">
-                    Host
-                </a>
-
-                <a href="#"
-                   class="rounded-full border border-[#FFF15C]/40 px-3 py-1 text-[#FFF15C] hover:bg-[#FFF15C] hover:text-[#12051F] transition">
-                    Login
-                </a>
-
-            </div>
+            <a href="#"
+               class="rounded-full border border-[#FFF15C]/40 px-4 py-1.5 text-[#FFF15C] transition hover:bg-[#FFF15C] hover:text-[#12051F]">
+                Login
+            </a>
 
         </div>
 
-    </nav>
+    </div>
 
-    <main class="max-w-[1500px] mx-auto px-5 md:px-10 lg:px-14 pt-10 pb-20">
+</nav>
 
-        <section class="pt-3 pb-16">
-
-            <h1 class="text-[#FFF15C] uppercase leading-[0.92] tracking-[0.06em] text-5xl md:text-7xl lg:text-[82px]"
-                style="font-family:'Silkscreen',monospace;">
-
-                EVENTS
-                <br>
-                NEAR YOU
-
-            </h1>
-
-            <div class="mt-5 h-[4px] w-72 bg-[#FFF15C] rounded-full"></div>
-
-            <p class="mt-7 text-white/70 text-lg md:text-xl max-w-xl leading-8">
-                Find hackathons, workshops, meetups and local communities happening around your city.
-            </p>
-
-        </section>
+    <!-- Main Content -->
+    <main class="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-8 py-8">
 
         {% block content %}
         {% endblock %}
 
     </main>
 
+    <!-- Footer -->
     <footer class="border-t border-violet-500/20 bg-black/20 backdrop-blur-md">
 
-        <div class="max-w-[1500px] mx-auto px-5 md:px-10 lg:px-14 py-7 flex flex-col md:flex-row justify-between items-center text-sm">
+        <div class="mx-auto flex w-full max-w-screen-2xl flex-col items-center justify-between px-4 py-8 text-sm sm:px-6 md:flex-row lg:px-8">
 
             <p class="text-white/40">
                 © 2026 Konfly — Events Near You.
             </p>
 
-            <div class="flex gap-6 mt-4 md:mt-0 text-white/50">
+            <div class="mt-4 flex gap-6 text-white/50 md:mt-0">
 
-                <a href="#" class="hover:text-[#FFF15C] transition">
+                <a href="#" class="transition hover:text-[#FFF15C]">
                     GitHub
                 </a>
 
-                <a href="#" class="hover:text-[#FFF15C] transition">
+                <a href="#" class="transition hover:text-[#FFF15C]">
                     Contact
                 </a>
 
-                <a href="#" class="hover:text-[#FFF15C] transition">
+                <a href="#" class="transition hover:text-[#FFF15C]">
                     About
                 </a>
 
