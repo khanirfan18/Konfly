@@ -19,6 +19,7 @@ class EventsModel(models.Model):
     end_time = models.TimeField()
     location = models.CharField(max_length=100)
     host = models.ForeignKey(User,on_delete=models.CASCADE)
+    slug = models.SlugField(unique=True,db_index=True)
 
     def __str__(self):
         return self.title

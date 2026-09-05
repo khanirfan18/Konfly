@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import EventsModel
-from django.views.generic.base import TemplateView
+from django.views.generic import ListView,DetailView,TemplateView
 
 # Create your views here.
 
@@ -15,4 +15,16 @@ class HomeView(TemplateView):
 
         return context
 
-   
+
+class EventList(ListView):
+    template_name = "events/explore.html"
+    model = EventsModel
+    context_object_name = "events"
+
+
+
+class EventDetails(DetailView):
+    model = EventsModel
+    template_name = "events/event-detail.html"
+    context_object_name = "event"
+
